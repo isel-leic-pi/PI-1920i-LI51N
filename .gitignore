@@ -40,4 +40,4 @@ bower_components
 dist
 old
 node.js8-the-right-way
-
+.DS_Store
