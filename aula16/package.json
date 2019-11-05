@@ -1,0 +1,18 @@
+{
+  "name": "aula15",
+  "version": "1.0.0",
+  "main": "b4-db.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  },
+  "description": "",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
