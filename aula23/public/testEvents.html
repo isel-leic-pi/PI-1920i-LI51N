@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset="utf-8">
+        <script type="text/ecmascript">
+
+            window.onload=handleLoad
+            function handleLoad(){
+                const container = document.getElementById("container") 
+                const heading1 = document.getElementById("heading1")
+                const btn = document.getElementById("btn")
+
+                document.body.addEventListener('click',captureClick, true)
+                document.body.addEventListener('click',bubblingClick, false)
+
+                btn.onclick = handleClick
+
+                function handleClick(e){
+                    console.log('handleClick')
+                    heading1.innerText = 'PI'
+                    container.innerHTML = `
+                                    <label> Name </label>
+                                    <input type=text>    
+                                `
+                }
+
+                function captureClick(e){
+                    console.log("Capture")
+                    e.stopPropagation()
+                }
+                function bubblingClick(e){
+                    console.log("Bubble")
+                }
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container"></div>
+        <h1 id="heading1">Texto</h1>
+        <button id="btn">Click</button>
+    </body>
+</html>

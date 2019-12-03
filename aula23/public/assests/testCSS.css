@@ -1,0 +1,23 @@
+
+            p {
+                background-color: red;
+                margin:0;
+            }
+
+            .classBlue {
+                background-color: blue;
+            }
+
+            #pyellow{
+                background-color: yellow;
+            }
+
+            div{
+                border-style: dashed;
+                display : inline
+            }
+
+            span{
+                border-style:solid;
+                display : block
+            }

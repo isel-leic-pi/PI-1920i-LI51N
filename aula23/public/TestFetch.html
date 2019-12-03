@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script type="text/ecmascript">
+
+            window.addEventListener('load',handleLoad)
+            function handleLoad(){
+                const container = document.getElementById("container") 
+                const btn = document.getElementById("btn")
+                let template = Handlebars.compile( `
+                                            <ul>
+                                                <li> Name : {{name}}</li>
+                                                <li> Description : {{description}}</li>
+                                            </ul>
+
+                                            `)
+
+                btn.addEventListener('click', handleClick)
+
+                function handleClick(e){
+                    console.log('handleClick')
+                    fetch("http://localhost:8080/api/bundles/1")
+                        .then(res => {
+                            console.log(res.status)
+                            return res.json()
+                        })
+                        .then(bundle => container.innerHTML = template(bundle))
+                                            
+                        .catch(e => console.log(e))
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container"></div>
+        <button id="btn">Click</button>
+    </body>
+</html>
