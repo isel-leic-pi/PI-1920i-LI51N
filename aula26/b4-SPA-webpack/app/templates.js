@@ -7,7 +7,6 @@ Handlebars.registerPartial('tableBundlesTemplate', tableBundlesTemplate)
 
 module.exports = {
     tableBundlesTemplate : Handlebars.compile(tableBundlesTemplate),
-    main : Handlebars.compile(require('./templates/main.hbs').default),
     home: Handlebars.compile(require('./templates/home.hbs').default),
     bundles: Handlebars.compile(require('./templates/bundles.hbs').default),
     bundleDetails: Handlebars.compile(require('./templates/bundle-details.hbs').default),
