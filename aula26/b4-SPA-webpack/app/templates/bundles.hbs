@@ -1,0 +1,10 @@
+ <div id="bundlesContainer"> 
+    {{> tableBundlesTemplate}}
+</div>
+<form id = "createBundle" action="/api/bundles" method="POST">
+    <label>Name</label>
+    <input type="text" id="inputName" >
+    <label>Description</label>
+    <input type="text" id="inputDescription" >
+    <input type="submit" >
+</form>
