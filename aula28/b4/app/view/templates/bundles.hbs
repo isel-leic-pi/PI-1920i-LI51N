@@ -1,0 +1,21 @@
+ <div id="bundlesContainer"> 
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {{#each bundles}}
+            <tr>
+                <td><a href="#bundleDetails/{{id}}">{{name}}</a> </td>
+                <td>{{description}}</td>
+            </tr>
+        {{/each}}    
+    </table>    
+</div>
+<form id = "createBundle" action="/api/bundles" method="POST">
+    <label>Name</label>
+    <input type="text" id="inputName" >
+    <label>Description</label>
+    <input type="text" id="inputDescription" >
+    <input type="submit" >
+</form>

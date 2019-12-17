@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Test</title>
+        <script type="text/ecmascript">
+            
+            window.addEventListener("load", loadHandler);
+
+            function loadHandler(){
+                const loginButton = document.querySelector('#loginButton');
+                const logoutButton = document.querySelector('#logoutButton')
+                loginButton.addEventListener('click', login)
+                logoutButton.addEventListener('click', logout)
+
+                function login(){
+                    const inputUser = document.querySelector('#inputUser');
+                    const inputPassword = document.querySelector('#inputPassword')
+                    const options = {
+                        method : 'POST',
+                        headers : {"Content-Type" : "application/json"},
+                        body : JSON.stringify({
+                            userName : inputUser.value,
+                            password : inputPassword.value
+                        })
+                    }
+                    fetch("http://localhost:8080/login",options)
+                        .then(res => res.json())
+                        .then(()=>window.location="/auth/home")
+                }
+
+                function logout(){
+                    const options = {
+                        method : 'POST',
+                    }
+                    fetch("http://localhost:8080/logout",options)
+                        .then(res => res.json())
+                        .then(()=>window.location="/home")
+                }
+            } 
+        </script>    
+    </head>
+    <body>
+        <input type="text" id="inputUser">
+        <input type="password" id="inputPassword">
+        <button id="logoutButton">logout</button>
+        <button id="loginButton">login</button>
+    </body>
+</html>
