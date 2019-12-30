@@ -15,7 +15,7 @@
   "devDependencies": {
     "css-loader": "0.28.7",
     "file-loader": "^1.1.11",
-    "handlebars": "4.0.10",
+    "handlebars": "4.3.0",
     "html-webpack-plugin": "2.30.1",
     "jquery": "^3.2.1",
     "raw-loader": "^4.0.0",
